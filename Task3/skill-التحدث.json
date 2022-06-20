@@ -1,0 +1,641 @@
+{
+  "intents": [
+    {
+      "intent": "أنواع_القهوه",
+      "examples": [
+        {
+          "text": "ابا منيو القهوه"
+        },
+        {
+          "text": "توفرون سبانيش لاتيه ؟"
+        },
+        {
+          "text": "ممكن منيو المشروبات ؟"
+        },
+        {
+          "text": "وش أنواع القهوه عندكم ؟"
+        },
+        {
+          "text": "وش مشروباتكم؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "الحلويات",
+      "examples": [
+        {
+          "text": "ابا منيو الحلويات"
+        },
+        {
+          "text": "توفرون توست فرنسي؟"
+        },
+        {
+          "text": "عندكم حلويات؟"
+        },
+        {
+          "text": "عندكم حلى؟"
+        },
+        {
+          "text": "فيه تشيز كيك؟"
+        },
+        {
+          "text": "وش توفرون حلى ؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "الموقع",
+      "examples": [
+        {
+          "text": "فين موقعكم ؟"
+        },
+        {
+          "text": "ممكن الموقع ؟"
+        },
+        {
+          "text": "ممكن موقعكم ؟"
+        },
+        {
+          "text": "وين مكان الفرع ؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "اوقات_العمل",
+      "examples": [
+        {
+          "text": "تفتحون اليوم ؟"
+        },
+        {
+          "text": "تفتحون يوم الجمعه ؟"
+        },
+        {
+          "text": "فاتحين اليوم؟"
+        },
+        {
+          "text": "كيف مواعيد العمل ؟"
+        },
+        {
+          "text": "متى تفتحون ؟"
+        },
+        {
+          "text": "متى تقفلون؟"
+        },
+        {
+          "text": "متى موعد الإقفال ؟"
+        },
+        {
+          "text": "متى موعد الفتح ؟"
+        },
+        {
+          "text": "ممكن مواعيدكم ؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "بارتيات",
+      "examples": [
+        {
+          "text": "بجيكم بيوم ميلادي"
+        },
+        {
+          "text": "بسوي عندكم بارتي"
+        },
+        {
+          "text": "بكرا يوم ميلادي"
+        },
+        {
+          "text": "شرايكم تسوون لي بارتي؟"
+        },
+        {
+          "text": "عندكم بارتيات ؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ترحيب",
+      "examples": [
+        {
+          "text": "السلام عليكم"
+        },
+        {
+          "text": "هاي"
+        },
+        {
+          "text": "هلا"
+        },
+        {
+          "text": "هيلو"
+        },
+        {
+          "text": "ياهلا"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "حجوزات",
+      "examples": [
+        {
+          "text": "أبا طاوله"
+        },
+        {
+          "text": "أقدر أحجز طاوله ؟"
+        },
+        {
+          "text": "اقدر احجز قبل ما أجيكم ؟"
+        },
+        {
+          "text": "فيه حجز ؟"
+        },
+        {
+          "text": "ممكن أحجز ؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "منيو_القهوه_البارده",
+      "examples": [
+        {
+          "text": "بارد"
+        },
+        {
+          "text": "عندكم قهوه بارده؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "منيو_القهوه_الحاره",
+      "examples": [
+        {
+          "text": "حار"
+        },
+        {
+          "text": "عنكم قهوه حاره؟"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-date",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "في أي يوم جاي ؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_3_1625270237294",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1625270237316",
+      "previous_sibling": "handler_2_1625270237316"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1625270237294",
+      "context": {
+        "date": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_2_1625270237316"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "الساعة كم ؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_2_1625270316517",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1625270316518",
+      "previous_sibling": "handler_7_1625270316518"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "كم عدد الأشخاص؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_9_1625270341035",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1625270341037",
+      "previous_sibling": "handler_6_1625270341037"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1625270341035",
+      "context": {
+        "number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_6_1625270341037"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1625270316517",
+      "context": {
+        "time": "@sys-time"
+      },
+      "conditions": "@sys-time",
+      "event_name": "input",
+      "dialog_node": "handler_7_1625270316518"
+    },
+    {
+      "type": "standard",
+      "title": "ترحيب",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "هلا فيك"
+              },
+              {
+                "text": "منور"
+              },
+              {
+                "text": "مرحبا"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#ترحيب",
+      "dialog_node": "node_10_1625104685866",
+      "previous_sibling": "node_10_1625268305393"
+    },
+    {
+      "type": "standard",
+      "title": "القهوه",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "حار أم بارد"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#أنواع_القهوه",
+      "dialog_node": "node_10_1625268305393",
+      "previous_sibling": "node_7_1625268610503"
+    },
+    {
+      "type": "standard",
+      "title": "بارتيات",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": " تنورنا "
+              },
+              {
+                "text": "بنحطك بعيوننا"
+              },
+              {
+                "text": "تعال وبتتونس عندنا"
+              },
+              {
+                "text": "والله وياحظ الكوفي فيك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#بارتيات",
+      "dialog_node": "node_1_1625270786004",
+      "previous_sibling": "node_9_1625271427751"
+    },
+    {
+      "type": "frame",
+      "title": "حجز",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "طلبك تم , تنورنا في الكوفي"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#حجوزات",
+      "dialog_node": "node_4_1625270194952",
+      "previous_sibling": "node_1_1625270786004"
+    },
+    {
+      "type": "standard",
+      "title": "قهوه_حاره",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "أنواع القهوه الحـاره "
+              },
+              {
+                "text": "اسبريسو 12 س.ر"
+              },
+              {
+                "text": "كابتشينو 17 س.ر"
+              },
+              {
+                "text": "لاتيه 18 س.ر"
+              },
+              {
+                "text": "امريكانو 15 س.ر"
+              },
+              {
+                "text": "مكياتو 16 س.ر"
+              },
+              {
+                "text": "فلات وايت 17 س.ر "
+              },
+              {
+                "text": "كورتادو 17 س.ر"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#منيو_القهوه_الحاره",
+      "dialog_node": "node_7_1625268610503",
+      "previous_sibling": "node_8_1625269028080"
+    },
+    {
+      "type": "standard",
+      "title": "الموقع",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "جده - شارع عرفات"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#الموقع",
+      "dialog_node": "node_7_1625442745516",
+      "previous_sibling": "مرحبا"
+    },
+    {
+      "type": "standard",
+      "title": "قهوه_بارده",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "أنواع القـهوه البارده"
+              },
+              {
+                "text": "ايس لاتيه 21 س.ر"
+              },
+              {
+                "text": "ايس أمريكانو 15 س.ر"
+              },
+              {
+                "text": "سبانيش لاتيه 25 س.ر"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#منيو_القهوه_البارده",
+      "dialog_node": "node_8_1625269028080",
+      "previous_sibling": "node_8_1625269546945"
+    },
+    {
+      "type": "standard",
+      "title": "حلويات",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "منـيو الحلويات"
+              },
+              {
+                "text": "كيكة الجزر 27 س.ر"
+              },
+              {
+                "text": "كيكة الفكتوريا 29 س.ر"
+              },
+              {
+                "text": "كيكة الفستق 25 س.ر"
+              },
+              {
+                "text": "كيكة القرفه 25 س.ر"
+              },
+              {
+                "text": "كيكة شوكلاته كرنشي 25 س.ر"
+              },
+              {
+                "text": "تشيز كيك 20 س.ر"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#الحلويات",
+      "dialog_node": "node_8_1625269546945",
+      "previous_sibling": "node_4_1625270194952"
+    },
+    {
+      "type": "standard",
+      "title": "وقت_العمل",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "فاتحـين كل يوم "
+              },
+              {
+                "text": "من الـساعه 7:30 صباحـًا"
+              },
+              {
+                "text": "إلى 12:00 صبـاحًا"
+              },
+              {
+                "text": "ماعدا يوم الجمعه نفتح الـساعه 4:00 مساء"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#اوقات_العمل",
+      "dialog_node": "node_9_1625271427751",
+      "previous_sibling": "node_7_1625442745516"
+    },
+    {
+      "type": "slot",
+      "parent": "node_4_1625270194952",
+      "variable": "$time",
+      "dialog_node": "slot_2_1625270316517",
+      "previous_sibling": "slot_3_1625270237294"
+    },
+    {
+      "type": "slot",
+      "parent": "node_4_1625270194952",
+      "variable": "$date",
+      "dialog_node": "slot_3_1625270237294"
+    },
+    {
+      "type": "slot",
+      "parent": "node_4_1625270194952",
+      "variable": "$number",
+      "dialog_node": "slot_9_1625270341035",
+      "previous_sibling": "slot_2_1625270316517"
+    },
+    {
+      "type": "standard",
+      "title": "أي شيء آخر",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "لم أفهم، يمكنك محاولة اعادة الصياغة"
+              },
+              {
+                "text": "هل يمكنك اعادة صياغة عبارتك؟ أنا لا فهم"
+              },
+              {
+                "text": "لم أفهم قصدك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "أي شيء آخر",
+      "previous_sibling": "node_10_1625104685866",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "مرحبا ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "أهلًا فيك معاك كوفي روز , كيف نقدر نساعدك؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "مرحبا"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "التحدث",
+  "language": "ar",
+  "description": ""
+}
